@@ -17,8 +17,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
-   return state
+  const { Categorias: { data: categories } } = state 
+   return categories
 
 }
 const mapDispatchToProps = dispatch => ({} )
