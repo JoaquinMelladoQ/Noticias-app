@@ -19,9 +19,10 @@ class App extends Component {
 
 const mapStateToProps = state => {
   const { Categorias: { data: categories } } = state 
-   return categories
-
+   return {
+     categories,
+  }
 }
-const mapDispatchToProps = dispatch => ({} )
+const mapDispatchToProps = dispatch => ({})
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
