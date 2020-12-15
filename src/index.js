@@ -1,10 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+
+
+const store = createStore(combineReducers({
+  noticias: noticiasReducer,
+  categorias: categoriasReducer,
+}))
 
 ReactDOM.render(
   <Provider store={store}>
