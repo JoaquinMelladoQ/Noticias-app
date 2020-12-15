@@ -10,8 +10,7 @@ import reportWebVitals from './reportWebVitals'
 
 
 const store = createStore(combineReducers({
-  noticias: noticiasReducer,
-  categorias: categoriasReducer,
+  ...reducers,
   form: formReducer,
 }))
 
