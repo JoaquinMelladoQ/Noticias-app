@@ -1,16 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
 import { Provider } from 'react-redux'
 import { reducer as formReducer } from 'redux-form'
 import { createStore, combineReducers } from 'redux'
-import './index.css'
-import App from './App'
+import * as reducers from './reducers'
 import reportWebVitals from './reportWebVitals'
 
 
 const store = createStore(combineReducers({
   noticias: noticiasReducer,
   categorias: categoriasReducer,
+  form: formReducer,
 }))
 
 ReactDOM.render(
