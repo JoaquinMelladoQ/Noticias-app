@@ -2,7 +2,10 @@ const ADD_CATEGORY = 'category/add'
 
 const addCatergory = payload => ({
     type: ADD_CATEGORY,
-    payload
+    payload: {
+        ...payload
+        id: Math.random().toString(36),
+    }
 })
 
 const initialState = {
