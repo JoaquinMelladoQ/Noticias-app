@@ -11,7 +11,7 @@ const addCatergory = payload => ({
 const initialState = {
     data: [{ id: 1, name: 'Defecto' }]
 }
-export default function reducer(state = initialState, action) {
+export default function reducer (state = initialState, action = addCatergory){
     switch (action.type) {
         case ADD_CATEGORY:
             return {
@@ -22,3 +22,4 @@ export default function reducer(state = initialState, action) {
             return state
     }
 }
+

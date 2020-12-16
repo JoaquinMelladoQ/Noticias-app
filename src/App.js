@@ -24,8 +24,10 @@ const mapStateToProps = state => {
      categories,
   }
 }
-const mapDispatchToProps = dispatch => ({
-  addCategory: payload => dispatch(addCategory(payload))
-})
+const mapDispatchToProps = dispatch => {
+  return {
+    addCategory: payload => dispatch(addCategory(payload)),
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
