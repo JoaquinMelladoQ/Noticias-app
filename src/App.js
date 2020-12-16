@@ -3,7 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 import { connect } from 'react-redux'
 import Category from './components/Category'
-import { addCategory } from './reducers/Categorias'
+import addCategory from './reducers/Categorias'
 // import News from './components/News'
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
     const { categories, addCategory } = this.props
     return (
       <div className="App">
-        <Category categories={categories} />
+        <Category addCategory={addCategory} categories={categories} />
         {/* <News /> */}
       </div>
     );
