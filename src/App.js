@@ -4,6 +4,7 @@ import './App.css'
 import { connect } from 'react-redux'
 import Category from './components/Category'
 import addCategory from './reducers/Categorias'
+import { reset } from 'redux-form'
 // import News from './components/News'
 
 class App extends Component {
@@ -24,10 +25,11 @@ const mapStateToProps = state => {
      categories,
   }
 }
-const mapDispatchToProps = dispatch => {
-  return {
-    addCategory: payload => dispatch(addCategory(payload)),
+const mapDispatchToProps = dispatch => ({
+  addCategory: payload => {
+    dispatch(addCategory(payload))
+    dispatch(reset('category'))
   }
-}
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
