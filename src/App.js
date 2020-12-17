@@ -10,7 +10,7 @@ import News from './components/News'
 
 class App extends Component {
   render() {
-    const { categories, addCategory, news, selectCategory } = this.props
+    const { categories, addCategory, news, selectCategory, selected } = this.props
     return (
       <div className="App">
         <Category
@@ -18,18 +18,19 @@ class App extends Component {
           addCategory={addCategory}
           categories={categories} 
         />
-        <News news={news} />
+        <News selectCategory={selected} news={news} />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  const { Categorias: { data: categories } } = state 
+  const { Categorias: { data: categories, selected } } = state 
   const { Noticias: { data: news } } = state 
    return {
      categories,
      news,
+     selected,
   }
 }
 const mapDispatchToProps = dispatch => ({
