@@ -5,15 +5,15 @@ import { connect } from 'react-redux'
 import Category from './components/Category'
 import addCategory from './reducers/Categorias'
 import { reset } from 'redux-form'
-// import News from './components/News'
+import News from './components/News'
 
 class App extends Component {
   render() {
-    const { categories, addCategory } = this.props
+    const { categories, addCategory, news } = this.props
     return (
       <div className="App">
         <Category addCategory={addCategory} categories={categories} />
-        {/* <News /> */}
+        <News news={news} />
       </div>
     );
   }
@@ -21,8 +21,10 @@ class App extends Component {
 
 const mapStateToProps = state => {
   const { Categorias: { data: categories } } = state 
+  const { Noticias: { data: news } } = state 
    return {
      categories,
+     news,
   }
 }
 const mapDispatchToProps = dispatch => ({

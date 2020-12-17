@@ -4,10 +4,10 @@ import NewsList from './NewsList'
 
 export default class News extends Component {
      render() {
-         const { News, addNews } = this.props
+         const { news, addNews } = this.props
          return (
              <div>
-                 <NewsForm onSubmit={addCategory} />
+                 <NewsForm onSubmit={addNews} />
                  <NewsList news={news} />
              </div>
          )
