@@ -48,7 +48,10 @@ const mapDispatchToProps = dispatch => ({
     dispatch(reset('category'))
   },
   selectCategory: payload => dispatch(selectCategory(payload)),
-  addNews: payload => dispatch(addNews(payload)),
+  addNews: payload => {
+    dispatch(addNews(payload))
+    dispatch(reset('News'))
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
