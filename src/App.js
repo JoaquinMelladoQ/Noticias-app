@@ -4,15 +4,20 @@ import './App.css'
 import { connect } from 'react-redux'
 import Category from './components/Category'
 import addCategory from './reducers/Categorias'
+import selectCategory from './reducers/Categorias'
 import { reset } from 'redux-form'
 import News from './components/News'
 
 class App extends Component {
   render() {
-    const { categories, addCategory, news } = this.props
+    const { categories, addCategory, news, selectCategory } = this.props
     return (
       <div className="App">
-        <Category addCategory={addCategory} categories={categories} />
+        <Category
+          selectCategory={selectCategory}
+          addCategory={addCategory}
+          categories={categories} 
+        />
         <News news={news} />
       </div>
     );
@@ -31,7 +36,8 @@ const mapDispatchToProps = dispatch => ({
   addCategory: payload => {
     dispatch(addCategory(payload))
     dispatch(reset('category'))
-  }
+  },
+  selectCategory: payload => dispatch(selectCategory(payload)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
