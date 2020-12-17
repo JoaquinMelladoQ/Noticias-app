@@ -4,7 +4,7 @@ export const addNews = payload => ({
     type: ADD_NEWS,
     payload: {
         ...payload,
-        id: Math.random().toString(36),
+        id: Math.floor(Math.random() * Math.floor(100000)).toString(36),
     }
 })
 
